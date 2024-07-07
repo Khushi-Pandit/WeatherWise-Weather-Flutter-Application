@@ -1,4 +1,4 @@
-import 'package:firstintern/splashscreen.dart';
+import 'Screens/SplashScreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,5 +9,3 @@ void main() {
     ),
   );
 }
-
-

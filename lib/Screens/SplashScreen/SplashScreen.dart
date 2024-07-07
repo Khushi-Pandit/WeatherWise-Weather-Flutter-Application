@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'homescreen.dart';
+import '../HomeScreen/HomeScreen.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -11,8 +11,9 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<Splashscreen> {
+
   @override
-  void initState() {
+  void initState() {  // Navigation to HomeScreen after splashing out this screen for 4 seconds of duration
     super.initState();
     Future.delayed(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
@@ -21,14 +22,14 @@ class _SplashScreenState extends State<Splashscreen> {
           builder: (context) => const HomeScreen(),
         ),
       );
-    });
+    },);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: const BoxDecoration(   // Gradient for screen
           gradient: LinearGradient(
             colors: [
               Color.fromARGB(255, 98, 164, 218),
@@ -40,28 +41,26 @@ class _SplashScreenState extends State<Splashscreen> {
           ),
         ),
         width: double.infinity,
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Image.asset(
-                'assets/images/wwlogo.png',
-                width: MediaQuery.of(context).size.width * 0.15,
-              ),
+
+            Image.asset(  // Logo and it's Styling
+              'assets/images/wwlogo.png',
+              width: MediaQuery.of(context).size.width * 0.15,
             ),
             const Padding(
-              padding: EdgeInsets.only(top: 15),
+              padding: EdgeInsets.only(top: 10),
             ),
-            const Text(
+
+            const Text(  // App name and Styling
               "WeatherWise",
               style: TextStyle(
                 fontSize: 25,
                 fontFamily: AutofillHints.addressCity,
                 fontWeight: FontWeight.w500,
+
               ),
             ),
           ],
