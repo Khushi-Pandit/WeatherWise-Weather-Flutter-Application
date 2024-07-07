@@ -95,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           body: SingleChildScrollView(
             child: Container(
+              height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -205,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
           height: MediaQuery
               .of(context)
               .size
-              .height * 0.56,
+              .height * 0.64,
           child: ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),

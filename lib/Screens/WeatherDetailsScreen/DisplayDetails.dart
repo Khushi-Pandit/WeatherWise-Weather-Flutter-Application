@@ -25,6 +25,7 @@ class _DisplayDataState extends State<DisplayData> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
+          height: MediaQuery.of(context).size.height,
         // Set the background gradient based on weather condition
         decoration: BoxDecoration(
           gradient: gradientColorDeciding(widget.searchIt.weatherCondition),
@@ -111,7 +112,7 @@ class _DisplayDataState extends State<DisplayData> {
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
                     ),
-                  )
+                  ),
                 ],
               ],
             ),
